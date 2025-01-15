@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Nextra – Next.js Static Site Generator",
+  title: "XLearn - Learn Programming & Frameworks",
 };
 
 export default function Home() {
