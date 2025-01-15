@@ -1,0 +1,125 @@
+import { Steps } from 'nextra/components';
+
+# Bash Structure
+
+In order to write Bash scripts, you just need a UNIX terminal and a text editor
+like Zed, VS Code, or a terminal-based editor like Neovim or Nano.
+
+## Creating a Script
+
+We will learn how to create a basic bash script by following the steps below.
+
+<Steps>
+
+### Confirm Current Directory
+
+Let's start by confirming the directory we are in using the `pwd{:bash}` (print
+working directory) command
+
+```bash {2}
+# Print working directory directory
+pwd
+```
+
+This command gives the current directory we are in. We need to go to the home
+directory to create our project folder. If the output of the command is
+`/{:bash}` skip step 2 and go to 3. If some other directory structure is shown
+in the output we will need to go the home folder(directory) first.
+
+### Move to Home Directory
+
+We can change directory using the `cd{:bash}` command. To change directory to
+home we can run the following command. You can learn more about `cd{:bash}`
+command [here](<https://en.wikipedia.org/wiki/Cd_(command)>).
+
+```bash {2}
+# Change directory to home
+cd ~
+```
+
+> [!NOTE]
+>
+> The root directory (`/{:bash}`) is not the same as the home directory
+> (`/home/username{:bash}`) in Linux. The root directory is the top-level
+> directory in the filesystem hierarchy and contains all other directories and
+> files. The home directory is a subdirectory within the root directory that is
+> specific to each user, where personal files and user-specific configurations
+> are stored.
+
+### Create Project Folder
+
+We can create a folder using the `mkdir{:bash}` command. We need to create a
+folder where all our files will be, for organization purposes. We will then move
+into the newly created directory using the `cd{:bash}` command
+
+```bash {2, 5}
+# Create a learn folder at the home directory
+mkdir learn
+
+# Change directory into the learn directory we created
+cd learn
+```
+
+### Creating a `.sh{:bash}` File
+
+Let's start by creating a new file with a `.sh{:bash}` extension. As an example,
+we could create a file called `hello.sh{:bash}`. To create that file, you can
+use the `.touch{:bash}` command. You can learn more about `touch{:bash}` command
+[here](<https://en.wikipedia.org/wiki/Touch_(command)>).
+
+We can then open the file using the `nano{:bash}` editor since it comes by
+default on Linux. You can use other editors to open it.
+
+```bash {2, 5}
+# Create hello.sh file
+touch hello.sh
+
+# Open hello.sh file in the nano editor
+nano hello.sh
+```
+
+### The Shebang
+
+In order to `execute/run{:bash}` a bash script file with the bash shell
+interpreter, the first line of a script file must indicate the absolute path to
+the bash executable:
+
+```bash {1} showLineNumbers
+#!/bin/bash
+```
+
+This is also called a [Shebang](<https://en.wikipedia.org/wiki/Shebang_(Unix)>).
+The Shebang instructs the operating system to run the script with the
+`/bin/bash{:bash}` executable.
+
+However, `bash{:bash}` is not always in `/bin/bash{:bash}` directory,
+particularly on non-Linux systems or due to installation as an optional package.
+Thus, you may want to use:
+
+```bash {1} showLineNumbers
+#!/usr/bin/env bash
+```
+
+This searches for bash executable in directories, listed in `PATH{:bash}`
+environmental variable. You can learn more about environment variables
+[here](https://en.wikipedia.org/wiki/Environment_variable).
+
+> [!NOTE]
+>
+> The `PATH` environment variable is a crucial component in UNIX-like operating
+> systems. It specifies a list of directories where the system looks for
+> executable files when you run a command in the terminal. Each directory in the
+> `PATH` is separated by a colon (`:`).
+
+</Steps>
+
+## Conclusion
+
+Congratulations! You have now learned the basics of creating and running Bash
+scripts. By following the steps outlined in this guide, you should be able to
+set up your environment, navigate directories, create project folders, and write
+simple Bash scripts. Remember to always start your scripts with the Shebang to
+ensure they are executed with the correct interpreter. As you continue to
+practice and explore more advanced Bash scripting techniques, you'll find that
+Bash is a powerful tool for automating tasks and managing your system
+efficiently. Happy scripting!
