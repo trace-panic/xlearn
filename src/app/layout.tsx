@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Command } from "lucide-react";
 import type { Metadata } from "next";
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
@@ -71,6 +72,7 @@ const RootLayout: FC<{
           footer={footer}
         >
           {children}
+          <SpeedInsights />
         </Layout>
       </body>
     </html>
