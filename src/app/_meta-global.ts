@@ -4,8 +4,4 @@ export default {
     type: "page",
     display: "hidden",
   },
-  learn: {
-    type: "page",
-    display: "Learn",
-  },
 };

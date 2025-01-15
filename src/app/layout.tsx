@@ -27,7 +27,19 @@ const banner = (
 
 const navbar = (
   <Navbar
-    logo={<Command />}
+    logo={
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "10px",
+          fontSize: "1.2rem",
+        }}
+      >
+        <Command />
+        <p style={{ marginTop: "2px" }}>XLEARN</p>
+      </div>
+    }
     projectLink="https://github.com/trace-panic/xlearn"
   />
 );
