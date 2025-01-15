@@ -40,7 +40,6 @@ export default function Hero() {
         backgroundColor: "#000",
         color: "#fff",
         minHeight: "100vh",
-        fontFamily: "Arial, sans-serif",
         position: "relative",
         overflow: "hidden",
       }}
