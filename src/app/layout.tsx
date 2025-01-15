@@ -1,22 +1,22 @@
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Command } from "lucide-react";
-import type { Metadata } from "next";
-import { Footer, Layout, Navbar } from "nextra-theme-docs";
-import "nextra-theme-docs/style.css";
-import { Banner, Head } from "nextra/components";
-import { getPageMap } from "nextra/page-map";
-import type { FC, ReactNode } from "react";
-import "./globals.css";
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Command } from 'lucide-react';
+import type { Metadata } from 'next';
+import { Footer, Layout, Navbar } from 'nextra-theme-docs';
+import 'nextra-theme-docs/style.css';
+import { Banner, Head } from 'nextra/components';
+import { getPageMap } from 'nextra/page-map';
+import type { FC, ReactNode } from 'react';
+import './globals.css';
 
 export const metadata: Metadata = {
-  generator: "Next.js",
-  applicationName: "XLearn",
+  generator: 'Next.js',
+  applicationName: 'XLearn',
   appleWebApp: {
-    title: "Xlearn",
+    title: 'Xlearn',
   },
   title: {
-    absolute: "",
-    template: "%s | XLearn",
+    absolute: '',
+    template: '%s | XLearn',
   },
 };
 
@@ -31,14 +31,14 @@ const navbar = (
     logo={
       <div
         style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "10px",
-          fontSize: "1.2rem",
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
+          fontSize: '1.2rem',
         }}
       >
         <Command />
-        <p style={{ marginTop: "2px" }}>XLEARN</p>
+        <p style={{ marginTop: '2px' }}>XLEARN</p>
       </div>
     }
     projectLink="https://github.com/trace-panic/xlearn"
