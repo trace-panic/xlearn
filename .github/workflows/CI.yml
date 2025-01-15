@@ -26,12 +26,3 @@ jobs:
 
       - name: Run Prettier
         run: npx prettier --check .
-
-      - name: Commit changes
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m 'Apply Prettier changes'
-          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/trace-panic/xlearn.git
-        if: success()
