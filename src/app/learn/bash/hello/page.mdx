@@ -1,1 +1,84 @@
+import { Steps } from 'nextra/components';
+
 # Bash Hello World
+
+## First Script
+
+> [!NOTE]
+>
+> In this course we will focus on the Linux bash and we will use nano as our
+> text editor.
+
+Once we have our `hello.sh{:bash}` file created and we've specified the bash
+shebang on the very first line, we are ready to create our first Hello World
+bash script.
+
+We will follow the steps below to create our first script.
+
+<Steps>
+
+### Writting to `hello.sh{:bash}`
+
+We need to open the `hello.sh{:bash}` file again if its not open and add the
+following code after the `#!/bin/bash{:bash}`:
+
+```bash {3}
+#!/bin/bash
+
+echo "Hello World!"
+```
+
+`echo{:bash}` is used to display any text info to the terminal. Here we're just
+instructing it to display `Hello World!{:txt}`
+
+We can now save the file using `Ctrl + o{:txt}` and press enter to confirm you
+want to save the file. You can then exit the nano editor using `Ctrl + x{:txt}`.
+
+### Make the Script Executable
+
+Before we can run our script, we need to make it executable. This can be done by
+changing the file permissions using the `chmod` command. Run the following
+command in your terminal:
+
+```bash
+chmod +x hello.sh
+```
+
+### Execute the Script
+
+Now that the script is executable, we can run it. There are a couple of ways to
+do this. The first method is to run the script directly:
+
+```bash
+./hello.sh
+```
+
+You should see the `Hello World!{:txt}` message displayed on your screen.
+
+Another way to run the script is by using the `bash` command:
+
+```bash
+bash hello.sh
+```
+
+This will also display the `Hello World!{:txt}` message.
+
+### Running Commands Directly in Terminal
+
+As bash can be used interactively, you could run the following command directly
+in your terminal and you would get the same result:
+
+```bash
+echo "Hello World!"
+```
+
+</Steps>
+
+## Conclusion
+
+Congratulations! You've successfully created and executed your first bash
+script. This simple `Hello World!{:txt}` example is just the beginning of what
+you can achieve with bash scripting. As you continue to learn and practice,
+you'll be able to automate tasks, manage system operations, and streamline your
+workflow with more complex scripts. Keep experimenting and exploring the
+powerful capabilities of bash!

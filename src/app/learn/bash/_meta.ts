@@ -3,4 +3,5 @@ export default {
   index: 'Introduction to Bash',
   structure: 'Bash Structure',
   hello: 'Bash Hello World',
+  variables: 'Bash Variables',
 };
