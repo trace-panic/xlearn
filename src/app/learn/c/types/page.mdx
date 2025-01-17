@@ -1,0 +1,204 @@
+# Variables and Types in C
+
+## Data Types
+
+C has several types of variables, but there are a few basic types:
+
+- **Integers** - whole numbers which can be either positive or negative. Defined
+  using `char{:c}`, `int{:c}`, `short{:c}`, `long{:c}` or `long long{:c}`.
+- **Unsigned integers** - whole numbers which can only be positive. Defined
+  using `unsigned char{:c}`, `unsigned int{:c}`, `unsigned short{:c}`,
+  `unsigned long{:c}` or `unsigned long long{:c}`.
+- **Floating point numbers** - real numbers (numbers with fractions). Defined
+  using `float{:c}` and `double{:c}`.
+- **Structures** - will be explained later, in the Structures section [here](#).
+
+## Size and Ranges
+
+The different types of variables define their bounds:
+
+- `char{:c}`: -128 to 127
+- `int{:c}`: -2,147,483,648 to 2,147,483,647 (on most 32-bit systems)
+- `long{:c}`: Can vary by system (typically larger range on 64-bit systems)
+
+> [!NOTE]
+>
+> The exact size of these types can vary depending on the computer architecture
+> and compiler.
+
+## Boolean Type
+
+C doesn't have a built-in boolean type, but it can be defined as:
+
+```c
+#define BOOL char
+#define FALSE 0
+#define TRUE 1
+```
+
+## Defining Variables
+
+For numbers, we typically use the `int{:c}` type. Here are different ways to
+define variables:
+
+```c
+int foo;           // Declaration without initialization
+int bar = 1;       // Declaration with initialization
+int x = 0, y = 1;  // Multiple declarations
+```
+
+## Mathematical Operations
+
+C supports basic mathematical operations:
+
+```c
+int a = 0, b = 1, c = 2, d = 3, e = 4;
+a = b - c + d * e;
+printf("%d", a); /* will print 1-2+3*4 = 11 */
+```
+
+## Type Modifiers
+
+Type modifiers in C allow you to modify the amount of storage space allocated
+for variables. These modifiers can be used with most basic data types to alter
+their ranges and memory usage:
+
+C provides several type modifiers:
+
+- `signed{:c}`
+- `unsigned{:c}`
+- `short{:c}`
+- `long{:c}`
+
+```c
+// Size modifiers
+short int smallNumber = 32767;         // Uses less memory than regular int
+long int bigNumber = 2147483647;       // Can store larger numbers than regular int
+long long int veryBigNumber = 9223372036854775807LL;  // Even larger range
+
+// Sign modifiers
+unsigned int positiveOnly = 65535;     // Can only store positive numbers
+signed int withSign = -32768;          // Can store both positive and negative numbers
+```
+
+A common use case is `unsigned{:c}` for array indices or sizes where negative
+values don't make sense:
+
+```c
+unsigned int arraySize = 100;
+unsigned char byte = 255;  // Maximum value for unsigned char
+```
+
+## Type Conversion
+
+C provides two types of type conversion: implicit (automatic) and explicit
+(manual) casting. Understanding these is crucial for preventing data loss and
+unexpected behavior:
+
+```c
+// Implicit conversion (automatic)
+int x = 10;
+double y = x;    // int automatically converted to double
+
+// Explicit conversion (manual)
+double pi = 3.14159;
+int roundedPi = (int)pi;    // Explicitly convert double to int, truncates to 3
+
+// Potential data loss example
+long long bigNum = 9223372036854775807LL;
+int smallNum = (int)bigNum;  // Data loss - number too large for int
+```
+
+Important conversion rules:
+
+- Converting from a larger type to a smaller type may result in data loss
+- Converting from floating-point to integer truncates decimal places
+- Converting from signed to unsigned can change the value interpretation
+
+## Constants
+
+Constants are values that cannot be modified after their initialization. C
+provides multiple ways to define constants, each with its own use case:
+
+```c
+// Using #define (preprocessor constant)
+#define MAX_USERS 100
+#define PI 3.14159
+#define SERVER_NAME "production_server"
+
+// Using const keyword (compile-time constant)
+const int MONTHS_IN_YEAR = 12;
+const float GRAVITY = 9.81;
+const char NEW_LINE = '\n';
+
+// Enum constants
+enum Days {
+    SUNDAY = 0,
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY
+};
+```
+
+Key differences:
+
+- `#define{:c}` is processed by the preprocessor before compilation
+- `const{:c}` provides type checking and can be used for type-safe constants
+- Enums provide a way to create named integer constants
+
+Best practices:
+
+- Use UPPERCASE for constant names by convention
+- `const{:c}` is preferred over `#define{:c}` for type safety
+- Use meaningful names that describe the constant's purpose
+- Document any magic numbers by converting them to named constants
+
+## Examples of Usage
+
+Here's a complete example showing various variable types and operations:
+
+```c
+#include <stdio.h>
+
+#define MAX_BUFFER_SIZE 1024
+
+int main() {
+  // Constants
+  const double TAX_RATE = 0.21;
+
+  // Variables with type modifiers
+  unsigned long long int accountBalance = 1000000ULL;
+
+  // Type conversion
+  float amount = 100.75;
+  int roundedAmount = (int)amount;
+
+  // Using constants and conversions
+  char buffer[MAX_BUFFER_SIZE];
+  double finalAmount = roundedAmount * TAX_RATE;
+
+  printf("Original: %.2f\n", amount);
+  printf("Rounded: %d\n", roundedAmount);
+  printf("With Tax: %.2f\n", finalAmount);
+
+  return 0;
+}
+```
+
+## Conclusion
+
+Understanding variables and types in C is fundamental to programming:
+
+- C provides various data types for different kinds of values
+- Each type has specific memory requirements and value ranges
+- Variables must be declared before use
+- Type modifiers can extend or restrict value ranges
+- Type conversion allows changing between different data types
+- Constants provide a way to define unchangeable values
+
+These concepts form the foundation for data manipulation in C programming and
+are essential for writing effective programs. As you progress, you'll learn how
+to combine these basic types into more complex data structures.
