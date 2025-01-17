@@ -7,6 +7,7 @@ import { Banner, Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
 import type { FC, ReactNode } from 'react';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   generator: 'Next.js',
@@ -72,6 +73,7 @@ const RootLayout: FC<{
           footer={footer}
         >
           {children}
+          <Analytics />
           <SpeedInsights />
         </Layout>
       </body>
