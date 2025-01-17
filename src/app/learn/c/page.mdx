@@ -1,0 +1,151 @@
+# C Programming Language
+
+## Introduction
+
+The C programming language is a general purpose programming language, which
+relates closely to the way machines work. Understanding how computer memory
+works is an important aspect of the C programming language. Although C can be
+considered as "hard to learn", C is in fact a very simple language, with very
+powerful capabilities.
+
+C is a widely used language and powers many applications including:
+
+- Windows operating system
+- Python interpreter
+- Git version control
+- Linux kernel
+- And many more
+
+C is a compiled language - which means that in order to run it, the compiler
+(for example, GCC) must take the code that we wrote, process it, and then create
+an executable file. This file can then be executed, and will do what we intended
+for the program to do.
+
+## History of C
+
+C was developed by Dennis Ritchie at Bell Labs between 1972 and 1973. Some key
+points in C's history:
+
+- It was created as a successor to the B programming language
+- Initially developed for the Unix operating system
+- Standardized by ANSI in 1989 (ANSI C)
+- Further standardized by ISO in 1990 (C90)
+- Major updates include C99 (1999) and C11 (2011)
+
+C's influence can be seen in many modern programming languages like C++, Java,
+and Rust that borrowed syntax and concepts from it.
+
+## Why Learn C?
+
+There are several compelling reasons to learn C:
+
+1. **Understanding Computer Architecture** - C provides low-level access to
+   computer memory and hardware
+
+2. **Performance** - C programs are very fast since they are compiled directly
+   to machine code
+
+3. **Portability** - C programs can run on virtually any platform with minimal
+   modifications
+
+4. **Foundation for Other Languages** - Many programming concepts in modern
+   languages originated from C
+
+5. **Wide Usage** - C remains one of the most widely used programming languages
+   in embedded systems, operating systems, and high-performance applications
+
+## Getting Started
+
+To begin programming in C, you'll need:
+
+1. A text editor or IDE (Integrated Development Environment)
+2. A C compiler (like GCC, Clang, or Visual Studio)
+3. Basic understanding of programming concepts
+
+You can learn how to setup your system to start writting C [here](#).
+
+## Our First Program
+
+### Introduction
+
+Every C program uses libraries, which give the ability to execute necessary
+functions. For example, the most basic function called `printf{:c}`, which
+prints to the screen, is defined in the `stdio.h{:c}` header file.
+
+### Including Headers
+
+To add the ability to run the `printf{:c}` command to our program, we must add
+the following include directive to our first line of the code:
+
+```c {1}
+#include <stdio.h>
+```
+
+### The Main Function
+
+The second part of the code is the actual code which we are going to write. The
+first code which will run will always reside in the main function.
+
+```c {3-5}
+#include <stdio.h>
+
+int main() {
+  // Our code goes here
+}
+```
+
+The `int{:c}` keyword indicates that the function main will return an integer -
+a simple number. The number which will be returned by the function indicates
+whether the program that we wrote worked correctly. If we want to say that our
+code was run successfully, we will return the number 0. A number greater than 0
+will mean that the program that we wrote failed.
+
+For this tutorial, we will return 0 to indicate that our program was successful:
+
+```c {6}
+#include <stdio.h>
+
+int main() {
+  // Our code goes here
+
+  return 0;
+}
+```
+
+> [!NOTE]
+>
+> Notice that every statement in C must end with a semicolon, so that the
+> compiler knows that a new statement has started.
+
+### Complete Program
+
+Here's our complete first program that prints `Hello, World!{:text}`:
+
+```c {4}
+#include <stdio.h>
+
+int main() {
+  printf("Hello, World!\n");
+  return 0;
+}
+```
+
+When you run this program, it will display:
+
+```bash
+Hello, World!
+```
+
+## Conclusion
+
+In this lesson, we learned the basic structure of a C program:
+
+- How to include header files using `#include{:c}`
+- The importance of the `main(){:c}` function as the entry point
+- Why we use `return 0{:c}` to indicate successful program execution
+- The necessity of semicolons at the end of statements
+- How to use `printf(){:c}` to output text to the screen
+
+These fundamentals form the basis for all C programs we'll write. Understanding
+this structure is crucial as we move forward to more complex programming
+concepts.
