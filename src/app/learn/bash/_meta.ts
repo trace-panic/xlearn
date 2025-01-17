@@ -4,4 +4,5 @@ export default {
   structure: 'Bash Structure',
   hello: 'Bash Hello World',
   variables: 'Bash Variables',
+  input: 'User Inputs',
 };

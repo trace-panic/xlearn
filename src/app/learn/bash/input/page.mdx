@@ -1,0 +1,57 @@
+# Bash User Input
+
+## Introduction
+
+Now let's go ahead and ask the user for input instead. To get an input we use
+the `read{:bash}` command and then we specify the variable the read input will
+be stored in.
+
+```bash {/read/, 5}
+#!/bin/bash
+
+echo "What is your name?"
+
+read name
+
+echo "Hi there $name"
+echo "Welcome to XLearn!"
+```
+
+The above will prompt the user for input and then store that input as a
+`string/text{:text}` in a variable. We can then use the variable and print a
+message back to them.
+
+When you run the script above you will be prompted to enter your name. I'll
+enter `Gilfoyle{:text}`. Once you've typed your name, just hit enter, and you
+will get the following output.
+
+```bash {}
+Hi there Gilfoyle
+Welcome to XLearn!
+```
+
+To reduce the code, we could change the first `echo{:bash}` statement to use the
+`-p{:bash}` flag, the `read{:bash}` command used with `-p{:bash}` flag will
+print a message before prompting the user for their input.
+
+```bash {3}
+#!/bin/bash
+
+read -p "What is your name? " name
+
+echo "Hi there $name"
+echo "Welcome to XLearn!"
+```
+
+## Conclusion
+
+The `read{:bash}` command is a fundamental way to get user input in Bash
+scripts. We learned that:
+
+- We can use `read{:text}` to capture user input into variables
+- The `-p{:text}` flag allows us to display a prompt message in a single line
+- User input is stored as text/string by default
+- We can then use these variables throughout our script
+
+This basic interaction with users opens up possibilities for creating more
+dynamic and interactive shell scripts.
