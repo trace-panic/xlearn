@@ -1,0 +1,196 @@
+# Arrays in C
+
+## Introduction to Arrays
+
+Arrays are special variables which can hold more than one value under the same
+variable name, organised with an index. They provide a way to store multiple
+values of the same data type in sequential memory locations.
+
+## One-Dimensional Arrays
+
+### Basic Array Declaration
+
+```c
+/* defines an array of 10 integers */
+int numbers[10];
+```
+
+### Array Initialization
+
+Arrays can be initialized in several ways:
+
+```c
+// Method 1: Individual assignment
+int numbers[10];
+numbers[0] = 10;
+numbers[1] = 20;
+
+// Method 2: Initialize during declaration
+int numbers[] = {10, 20, 30, 40, 50};
+
+// Method 3: Partial initialization
+int numbers[10] = {1, 2, 3}; // Rest will be 0
+```
+
+### Accessing Array Elements
+
+```c
+int numbers[10];
+numbers[0] = 10;  // First element
+numbers[9] = 100; // Last element
+
+printf("First element: %d\n", numbers[0]);
+printf("Last element: %d\n", numbers[9]);
+```
+
+Important notes:
+
+- Arrays are zero-indexed
+- Accessing beyond array bounds leads to undefined behavior
+- Array size must be a constant expression
+
+## Multidimensional Arrays
+
+### Two-Dimensional Arrays
+
+A two-dimensional array is essentially an array of arrays. Think of it as a
+table with rows and columns.
+
+```c
+// Declaration
+int matrix[3][4];
+
+// Initialization
+int matrix[3][4] = {
+    {1, 2, 3, 4},    // Row 0
+    {5, 6, 7, 8},    // Row 1
+    {9, 10, 11, 12}  // Row 2
+};
+
+// Alternative initialization
+int matrix[][4] = {
+    {1, 2, 3, 4},
+    {5, 6, 7, 8},
+    {9, 10, 11, 12}
+};
+```
+
+### Accessing 2D Array Elements
+
+```c
+int value = matrix[1][2]; // Accesses row 1, column 2
+```
+
+### Memory Layout
+
+```c
+int matrix[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+```
+
+Memory layout visualization:
+
+```
+[1][2][3][4][5][6]
+```
+
+## Array Operations
+
+### Iterating Through Arrays
+
+```c
+// 1D Array
+int numbers[5] = {1, 2, 3, 4, 5};
+for(int i = 0; i < 5; i++) {
+    printf("%d ", numbers[i]);
+}
+
+// 2D Array
+int matrix[3][4];
+for(int i = 0; i < 3; i++) {
+    for(int j = 0; j < 4; j++) {
+        printf("%d ", matrix[i][j]);
+    }
+    printf("\n");
+}
+```
+
+### Common Array Operations
+
+```c
+// Finding array length
+int size = sizeof(numbers) / sizeof(numbers[0]);
+
+// Copying arrays
+int source[5] = {1, 2, 3, 4, 5};
+int destination[5];
+for(int i = 0; i < 5; i++) {
+    destination[i] = source[i];
+}
+```
+
+## Practical Examples
+
+### Array as a Counter
+
+```c
+int frequency[26] = {0}; // Initialize all elements to 0
+char text[] = "Hello";
+
+for(int i = 0; text[i] != '\0'; i++) {
+    if(text[i] >= 'a' && text[i] <= 'z') {
+        frequency[text[i] - 'a']++;
+    }
+}
+```
+
+### Matrix Operations
+
+```c
+// Matrix addition
+void addMatrices(int A[][3], int B[][3], int C[][3], int rows) {
+    for(int i = 0; i < rows; i++) {
+        for(int j = 0; j < 3; j++) {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+}
+```
+
+## Common Pitfalls and Best Practices
+
+1. **Array Bounds**
+
+   - Always check array bounds
+   - Use symbolic constants for array sizes
+
+2. **Array Initialization**
+
+   - Initialize arrays when declared if possible
+   - Be aware of partial initialization behavior
+
+3. **Memory Considerations**
+   - Large arrays should be declared outside functions
+   - Consider dynamic allocation for very large arrays
+
+## Conclusion
+
+Arrays in C are fundamental data structures that provide:
+
+- Efficient storage of multiple values of the same type
+- Direct access to elements through indexing
+- Foundation for more complex data structures
+- Support for multi-dimensional data representation
+
+Key points to remember:
+
+- Arrays are zero-indexed
+- Array size must be defined at compile time (unless using dynamic allocation)
+- Multi-dimensional arrays follow row-major ordering
+- Array bounds checking is the programmer's responsibility
+- Understanding array memory layout is crucial for efficient programming
+
+This knowledge forms the basis for more advanced concepts like pointers, dynamic
+memory allocation, and complex data structures.

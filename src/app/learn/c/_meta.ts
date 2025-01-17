@@ -2,4 +2,5 @@
 export default {
   index: 'Introduction to C',
   types: 'Variables and Types',
+  arrays: 'Arrays in C',
 };
