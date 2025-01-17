@@ -8,6 +8,8 @@ numbers as well as characters.
 
 ## Variables
 
+### Basic Variable Assignment
+
 To assign a value to a variable, all you need to do is use the `={:bash}` sign:
 
 ```bash
@@ -35,6 +37,8 @@ echo ${name}
 The above code would output: `XLearn{:txt}` as this is the value of our name
 variable.
 
+### Using Variables in Scripts
+
 Next, let's update our `hello.sh{:bash}` script and include a variable in it.
 Open the file with your favorite text editor. Now add the name variable here in
 the file, with a welcome message. Our file now looks like this:
@@ -58,6 +62,8 @@ Here is a rundown of the script written in the file:
   assigned a value to it.
 - **`echo="Hi there $name"{:bash}`:** Finally, we output the content of the
   variable on the screen as a welcome message by using `echo{:bash}`.
+
+### Command Line Parameters
 
 You can also add multiple variables in the file as shown below. If you save this
 file and run it you'll see `Hello Tom{:txt}` on the terminal.
@@ -120,3 +126,11 @@ Hello there Gilfoyle
 Hello there buddy!
 Hello there Gilfoyle buddy!
 ```
+
+## Conclusion
+
+Variables are fundamental building blocks in Bash scripting. They allow you to
+store and manipulate data, making your scripts more dynamic and reusable.
+Whether you're using basic variable assignments or working with command line
+parameters, understanding how variables work is essential for effective Bash
+scripting.
