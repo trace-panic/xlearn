@@ -1,4 +1,4 @@
-import { Code, GitPullRequestClosed } from "lucide-react";
+import { GitPullRequestClosed } from "lucide-react";
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
 import "nextra-theme-docs/style.css";
 import { Banner } from "nextra/components";
