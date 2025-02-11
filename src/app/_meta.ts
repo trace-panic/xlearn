@@ -3,7 +3,13 @@ export default {
     display: "hidden",
   },
   learn: {
-    type: "page",
+    type: "menu",
     title: "Learn",
+    items: {
+      linux: {
+        title: "Linux",
+        href: "/learn/linux",
+      },
+    },
   },
 };

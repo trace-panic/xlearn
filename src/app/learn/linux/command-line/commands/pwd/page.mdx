@@ -1,0 +1,120 @@
+import { FileTree } from 'nextra/components'
+
+# Understanding `pwd{:bash}` and Linux File System
+
+## The Linux File System
+
+In Linux, everything is organized as a file within a hierarchical directory structure. This structure starts at the root directory (represented by `/{:bash}`) and branches out into other directories.
+
+### Basic File System Structure
+
+<FileTree>
+  <FileTree.Folder name="/" defaultOpen>
+    <FileTree.File name="bin/" />
+    <FileTree.File name="etc/" />
+    <FileTree.Folder name="home/" defaultOpen>
+      <FileTree.File name="user1/" />
+      <FileTree.File name="user2/" />
+    </FileTree.Folder>
+    <FileTree.File name="var/" />
+    <FileTree.File name="usr/" />
+  </FileTree.Folder>
+</FileTree>
+
+## The `pwd{:bash}` Command
+
+### Basic Usage
+
+```bash
+pwd
+# Output example: /home/username
+```
+
+The `pwd{:bash}` command ("print working directory") shows your current location in the filesystem.
+
+### Options
+
+| Option | Description |
+|--------|-------------|
+| `-L` | Show logical path (follows symbolic links) |
+| `-P` | Show physical path (shows actual path) |
+
+```bash
+# Logical path (default)
+pwd -L
+
+# Physical path
+pwd -P
+```
+
+## Understanding Paths
+
+### Absolute Paths
+- Start from the root directory (/)
+- Always begin with a forward slash
+- Complete path to location
+
+Examples:
+
+```bash
+/home/username
+/etc/firefox
+/var/log
+```
+
+### Relative Paths
+- Start from current location
+- Don't begin with a forward slash
+- Use special notations:
+  - `.{:bash}` (current directory)
+  - `..{:bash}` (parent directory)
+
+Examples:
+
+```bash
+# If you're in /home/username
+Documents/Photos    # Points to /home/username/Documents/Photos
+../otheruser       # Points to /home/otheruser
+```
+
+## Common Use Cases
+
+### 1. Script Navigation
+
+```bash
+#!/bin/bash
+current_dir=$(pwd)
+echo "Working from: $current_dir"
+```
+
+### 2. Path Verification
+
+```bash
+# Check if in correct directory
+if [ "$(pwd)" != "/home/username/project" ]; then
+    echo "Wrong directory!"
+fi
+```
+
+### 3. Building File Paths
+
+```bash
+base_dir=$(pwd)
+config_file="$base_dir/config.txt"
+```
+
+## Tips and Best Practices
+
+1. **Always Verify Location**
+   - Use `pwd{:bash}` before executing important commands
+   - Especially important when using `rm{:bash}` or `mv{:bash}`
+
+2. **Path Names**
+   - Avoid spaces in directory names
+   - Use underscores or hyphens instead
+
+3. **Working with Paths**
+   - Store current path when scripting
+   - Use absolute paths for important scripts
+
+Understanding your location in the filesystem is fundamental to Linux navigation. Next, we'll learn how to change directories using the `cd{:bash}` command.
