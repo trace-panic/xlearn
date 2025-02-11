@@ -17,9 +17,7 @@ const NAVBAR = (
 
 const FOOTER = (
   <Footer>
-    <p className="mt-6 text-xs">
-      © {new Date().getFullYear()} The XLearn Project.
-    </p>
+    <p>© {new Date().getFullYear()} The XLearn Project.</p>
   </Footer>
 );
 
@@ -30,7 +28,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
-      <body>
+      <body style={{ fontFamily: "monospace" }}>
         <Layout
           banner={BANNER}
           navbar={NAVBAR}
