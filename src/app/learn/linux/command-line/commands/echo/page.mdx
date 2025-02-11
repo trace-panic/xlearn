@@ -1,0 +1,103 @@
+# The `echo{:bash}` Command
+
+## Basic Usage
+
+The `echo{:bash}` command is one of the most fundamental and frequently used commands in Linux. It simply prints (echoes) text to your terminal.
+
+### Simple Output
+
+```bash
+echo Hello World
+# Output: Hello World
+
+echo "Hello World"
+# Output: Hello World
+```
+
+## Using Quotes
+
+### Single vs Double Quotes
+
+```bash
+# Double quotes allow variable expansion
+name="Pete"
+echo "Hello $name"
+# Output: Hello Pete
+
+# Single quotes treat everything literally
+echo 'Hello $name'
+# Output: Hello $name
+```
+
+## Special Characters
+
+### New Lines with `-e{:bash}` Flag
+
+```bash
+# Print text on multiple lines
+echo -e "Line 1\nLine 2"
+# Output:
+# Line 1
+# Line 2
+```
+
+### Common Special Characters
+
+- `\n` - New line
+- `\t` - Tab
+- `\b` - Backspace
+- `\\` - Backslash
+```bash
+echo -e "Name:\tPete"
+# Output: Name:    Pete
+```
+
+## Practical Uses
+
+### 1. Variable Contents
+
+```bash
+# Display environment variables
+echo $PATH
+echo $HOME
+echo $USER
+```
+
+### 2. Command Output
+
+```bash
+# Current date
+echo "Today is $(date)"
+# Output: Today is Tue Jan 30 14:30:45 EST 2024
+```
+
+### 3. Writing to Files
+
+```bash
+# Append text to file
+echo "Some text" >> file.txt
+
+# Overwrite file
+echo "New content" > file.txt
+```
+
+## Common Options
+
+| Option | Description |
+|--------|-------------|
+| `-n` | Do not output trailing newline |
+| `-e` | Enable interpretation of backslash escapes |
+| `-E` | Disable interpretation of backslash escapes (default) |
+
+### Examples with Options
+
+```bash
+# Without newline
+echo -n "No newline"
+echo " on same line"
+
+# With escape sequences
+echo -e "First line\nSecond line"
+```
+
+This lesson covers basic to advanced usage of `echo{:bash}` and provides practical examples

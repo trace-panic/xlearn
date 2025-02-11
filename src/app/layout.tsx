@@ -35,7 +35,7 @@ export default async function RootLayout({
           footer={FOOTER}
           pageMap={await getPageMap()}
           editLink="Edit this page on GitHub"
-          docsRepositoryBase="https://github.com/trace-panic/xlearn"
+          docsRepositoryBase="https://github.com/trace-panic/xlearn/tree/main"
         >
           {children}
         </Layout>
