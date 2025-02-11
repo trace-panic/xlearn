@@ -1,0 +1,128 @@
+import { Steps } from 'nextra/components'
+
+# Installing Ubuntu Linux
+
+## System Requirements
+
+Before we begin, make sure your computer meets these minimum requirements:
+- 2 GHz dual-core processor
+- 4 GB RAM (8 GB recommended)
+- 25 GB free storage space
+- USB port for installation media
+- Internet connection
+
+> [!NOTE]
+>
+> You don't need to necessarily use Ubuntu, feel free to use other linux distributions
+>
+> We recommend asking someone with Linux expertise to set up your system or use a system thats already set up
+
+## Preparation Steps
+
+<Steps>
+
+### Back Up Your Data
+Before making any system changes, back up all important data from your current system.
+
+### Download Ubuntu
+1. Download Ubuntu [here](https://ubuntu.com/download/desktop)
+2. Download the latest LTS (Long Term Support) version
+3. Verify the download using the SHA256 checksum
+
+### Create Installation Media
+You'll need:
+- A blank USB drive (8GB or larger)
+- Software to create bootable USB:
+  - For Windows: Download [Rufus](https://rufus.ie)
+  - For Mac: Use [Etcher](https://www.balena.io/etcher/)
+  - For Linux: Use built-in Startup Disk Creator
+
+</Steps>
+
+## Installation Process
+
+<Steps>
+
+### Boot from USB
+1. Insert your Ubuntu USB drive
+2. Restart your computer
+3. Enter BIOS/UEFI (usually F2, F12, or Del key)
+4. Change boot order to USB first
+5. Save and exit
+
+### Ubuntu Installation
+1. Select "Try or Install Ubuntu"
+2. Choose your language
+3. Select "Install Ubuntu"
+4. Choose keyboard layout
+
+### Installation Type
+Choose one:
+- **Install alongside existing OS** (dual-boot)
+- **Erase disk and install Ubuntu** (single OS)
+- **Something else** (manual partitioning)
+
+### Configure Settings
+1. Select your location
+2. Create your user account
+3. Choose a strong password
+4. Wait for installation to complete
+5. Restart when prompted
+
+</Steps>
+
+## Post-Installation Setup
+
+<Steps>
+
+### System Updates
+Run the following commands to update your system
+```bash
+sudo apt update
+sudo apt upgrade
+```
+
+### Install Essential Software
+```bash
+sudo apt install build-essential git curl wget
+```
+
+### Install Additional Drivers
+1. Open "Software & Updates"
+2. Go to "Additional Drivers" tab
+3. Install recommended drivers
+
+### Enable Ubuntu Repositories
+1. Open "Software & Updates"
+2. Enable:
+   - Main
+   - Universe
+   - Restricted
+   - Multiverse
+
+</Steps>
+
+## Troubleshooting Common Issues
+
+### Boot Problems
+- Secure Boot disabled in BIOS
+- UEFI vs Legacy boot mode
+- Graphics driver issues
+
+### Network Issues
+- WiFi driver installation
+- Network adapter recognition
+
+## Next Steps
+
+After installation:
+1. Familiarize yourself with the Ubuntu desktop
+2. Learn basic terminal commands
+3. Explore the Software Center
+4. Set up your development environment
+
+## Getting Help
+
+- Ubuntu Forums: [ubuntu.com/community](https://ubuntu.com/community)
+- Ask Ubuntu: [askubuntu.com](https://askubuntu.com)
+- Ubuntu Documentation: [help.ubuntu.com](https://help.ubuntu.com)
